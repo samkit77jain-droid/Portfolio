@@ -1,31 +1,1480 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Samkit Jain — Computer Engineering student, Machine Learning & Data Science enthusiast." />
-<title>Samkit Jain | ML & Data Science</title>
-<style>
-:root{--bg:#fbf8f0;--card:#fffdf8;--text:#29241b;--muted:#6f6759;--line:#e8dcc5;--accent:#b88928;--accent2:#d7b35a;--max:1120px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 88% 8%,rgba(215,179,90,.18),transparent 25%),radial-gradient(circle at 8% 35%,rgba(184,137,40,.08),transparent 24%),var(--bg);color:var(--text);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(92%,var(--max));margin:auto}.nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(251,248,240,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:1.25rem}.logo span{color:var(--accent)}.links{display:flex;gap:26px;color:var(--muted);font-size:.94rem}.links a:hover{color:var(--text)}
-.hero{min-height:100vh;display:grid;align-items:center;padding-top:90px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}.hero h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.98;letter-spacing:-.06em}.hero h1 span{background:linear-gradient(90deg,#8e6416,#d4aa4f);-webkit-background-clip:text;color:transparent}.hero p{max-width:650px;color:var(--muted);font-size:1.1rem;margin:25px 0}.buttons{display:flex;gap:13px;flex-wrap:wrap}.btn{padding:12px 19px;border:1px solid var(--line);border-radius:12px;font-weight:700;transition:.2s}.btn.primary{background:var(--text);color:#fffdf8}.btn:hover{transform:translateY(-2px);border-color:rgba(110,231,255,.4)}.terminal{background:linear-gradient(145deg,#fffdf8,#f5ead4);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 25px 80px rgba(0,0,0,.35)}.dots{display:flex;gap:7px;margin-bottom:22px}.dots i{width:9px;height:9px;border-radius:50%;background:#59657a}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9rem;color:#cbd5e1}.code .cyan{color:var(--accent)}.code .purple{color:#b9a8ff}.code .green{color:#8cf0b1}
-section{padding:95px 0}.section-title{font-size:2.1rem;letter-spacing:-.03em;margin-bottom:10px}.section-sub{color:var(--muted);margin-bottom:35px}.about{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:rgba(255,253,248,.88);border:1px solid var(--line);border-radius:18px;padding:25px}.card p{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat strong{display:block;font-size:2rem}.stat small{color:var(--muted)}
-.project{display:grid;grid-template-columns:1fr 1.5fr;gap:28px;align-items:stretch}.project-visual{border-radius:18px;min-height:300px;border:1px solid var(--line);background:linear-gradient(135deg,#f7e9c9,#fffdf8);display:grid;place-items:center;font-family:ui-monospace;font-size:3rem}.project-body h3{font-size:1.55rem;margin-bottom:8px}.project-body p{color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tag{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:.82rem;color:#c8d4e8}.bullets{padding-left:20px;color:var(--muted)}
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.skill h3{margin-bottom:10px}.skill p{color:var(--muted)}.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.achievement strong{font-size:1.4rem;display:block;margin-bottom:7px}.achievement p{color:var(--muted)}.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact a{display:block;padding:18px;background:rgba(255,253,248,.88);border:1px solid var(--line);border-radius:15px;color:var(--text)}.contact a:hover{border-color:rgba(110,231,255,.4)}footer{padding:35px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.decor{position:fixed;pointer-events:none;z-index:0;border:1px solid rgba(184,137,40,.18);border-radius:50%}.decor.one{width:320px;height:320px;right:-150px;top:140px}.decor.two{width:180px;height:180px;left:-90px;bottom:180px}.gold-line{height:2px;width:70px;background:linear-gradient(90deg,var(--accent),transparent);margin:18px 0}.hero,.nav,section,footer{position:relative;z-index:1}.card{box-shadow:0 12px 35px rgba(108,78,25,.06)}.project-visual{position:relative;overflow:hidden}.project-visual:before,.project-visual:after{content:"";position:absolute;border:1px solid rgba(184,137,40,.35);border-radius:50%}.project-visual:before{width:180px;height:180px}.project-visual:after{width:260px;height:260px}.visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,40,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,40,.08) 1px,transparent 1px);background-size:28px 28px}.section-title:after{content:"";display:block;width:45px;height:2px;background:var(--accent);margin-top:10px}
-@media(max-width:800px){.links{display:none}.hero-grid,.about,.project,.contact{grid-template-columns:1fr}.skills,.achievements,.stats{grid-template-columns:1fr}.hero{padding-top:110px}.terminal{margin-top:10px}section{padding:70px 0}}
+<meta name="description"
+content="Samkit Jain — Computer Engineering student, Machine Learning and Data Science enthusiast.">
+
+<title>Samkit Jain | Portfolio</title>
+
+<style>
+
+:root{
+    --bg:#fbf8f0;
+    --card:#fffdf8;
+    --text:#29241b;
+    --muted:#756d60;
+    --line:#eadfc9;
+    --gold:#b88928;
+    --gold-light:#d8b765;
+    --gold-soft:#f5ead2;
+    --shadow:0 20px 60px rgba(80,55,15,.10);
+    --max:1150px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 90% 5%,rgba(216,183,101,.20),transparent 25%),
+        radial-gradient(circle at 5% 40%,rgba(184,137,40,.08),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(92%,var(--max));
+    margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    background:rgba(251,248,240,.82);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:1.35rem;
+    font-weight:900;
+    letter-spacing:-.04em;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    color:var(--muted);
+    font-size:.93rem;
+}
+
+.nav-links a{
+    position:relative;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:.25s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:90px;
+    position:relative;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border:1px solid var(--line);
+    border-radius:50px;
+    background:rgba(255,253,248,.75);
+    color:var(--gold);
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#61b86b;
+    box-shadow:0 0 0 5px rgba(97,184,107,.12);
+}
+
+.hero h1{
+    font-size:clamp(3.4rem,7vw,6.5rem);
+    line-height:.94;
+    letter-spacing:-.07em;
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#8e6416,#d5b05b,#a8751b);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:650px;
+    color:var(--muted);
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 20px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    font-weight:800;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(80,55,15,.12);
+}
+
+.btn-primary{
+    background:var(--text);
+    color:white;
+}
+
+/* ================= CODE CARD ================= */
+
+.code-card{
+    background:#1e1c18;
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 30px 80px rgba(40,30,10,.25);
+    transform:rotate(1.5deg);
+    transition:.4s;
+    position:relative;
+}
+
+.code-card:hover{
+    transform:rotate(0) translateY(-8px);
+}
+
+.code-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:#aaa;
+    font-size:.75rem;
+    margin-bottom:20px;
+}
+
+.dots{
+    display:flex;
+    gap:7px;
+}
+
+.dots i{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#777;
+}
+
+.code{
+    font-family:monospace;
+    font-size:.88rem;
+    color:#e8e4dc;
+    line-height:2;
+}
+
+.code .gold{
+    color:#e2bd6d;
+}
+
+.code .green{
+    color:#98d6a5;
+}
+
+.code .purple{
+    color:#c9b2ff;
+}
+
+.code .blue{
+    color:#9bc8e8;
+}
+
+/* ================= FLOATING BADGES ================= */
+
+.floating{
+    position:absolute;
+    padding:12px 15px;
+    border:1px solid var(--line);
+    border-radius:13px;
+    background:rgba(255,253,248,.9);
+    box-shadow:var(--shadow);
+    font-weight:800;
+    font-size:.82rem;
+    animation:float 4s ease-in-out infinite;
+}
+
+.float-one{
+    right:35%;
+    top:20%;
+}
+
+.float-two{
+    right:3%;
+    bottom:20%;
+    animation-delay:1.5s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:100px 0;
+}
+
+.section-heading{
+    margin-bottom:40px;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:.78rem;
+    font-weight:900;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.section-title{
+    font-size:2.5rem;
+    letter-spacing:-.05em;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    margin-top:7px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.card{
+    background:rgba(255,253,248,.85);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 12px 35px rgba(100,70,20,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.about-text{
+    color:var(--muted);
+    font-size:1rem;
+}
+
+.about-highlight{
+    margin-top:25px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.pill{
+    padding:7px 12px;
+    border-radius:30px;
+    background:var(--gold-soft);
+    color:#8d661e;
+    font-size:.8rem;
+    font-weight:800;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.stat{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:145px;
+}
+
+.stat-number{
+    font-size:2.5rem;
+    font-weight:900;
+    color:var(--gold);
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+/* ================= PROJECT ================= */
+
+.project-card{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:30px;
+    padding:0;
+    overflow:hidden;
+}
+
+.project-visual{
+    min-height:390px;
+    background:
+        linear-gradient(135deg,#f4e2b9,#fffdf8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.neural{
+    width:220px;
+    height:220px;
+    position:relative;
+}
+
+.neuron{
+    position:absolute;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 7px rgba(184,137,40,.12);
+}
+
+.n1{left:10px;top:30px}
+.n2{left:10px;top:100px}
+.n3{left:10px;top:170px}
+
+.n4{left:100px;top:65px}
+.n5{left:100px;top:145px}
+
+.n6{right:10px;top:105px}
+
+.connection{
+    position:absolute;
+    height:2px;
+    background:rgba(184,137,40,.35);
+    transform-origin:left center;
+}
+
+.c1{left:22px;top:38px;width:90px;transform:rotate(20deg)}
+.c2{left:22px;top:107px;width:90px}
+.c3{left:22px;top:177px;width:90px;transform:rotate(-20deg)}
+.c4{left:112px;top:73px;width:90px;transform:rotate(17deg)}
+.c5{left:112px;top:152px;width:90px;transform:rotate(-17deg)}
+
+.project-content{
+    padding:38px 38px 38px 5px;
+}
+
+.project-content h3{
+    font-size:1.8rem;
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:var(--muted);
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:20px 0;
+}
+
+.tag{
+    padding:6px 11px;
+    border-radius:30px;
+    border:1px solid var(--line);
+    background:#fffaf0;
+    font-size:.78rem;
+    font-weight:800;
+    color:#85601c;
+}
+
+.project-list{
+    padding-left:20px;
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.project-list li{
+    margin:8px 0;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.skill-card h3{
+    margin-bottom:18px;
+}
+
+.skill{
+    margin:15px 0;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    font-size:.85rem;
+    font-weight:800;
+}
+
+.skill-bar{
+    height:7px;
+    background:#eee5d4;
+    border-radius:20px;
+    margin-top:7px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    border-radius:20px;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.achievement-icon{
+    font-size:2rem;
+    margin-bottom:12px;
+}
+
+.achievement-number{
+    font-size:1.7rem;
+    font-weight:900;
+}
+
+.achievement-card p{
+    color:var(--muted);
+    margin-top:5px;
+}
+
+/* ================= EDUCATION TIMELINE ================= */
+
+.timeline{
+    position:relative;
+    max-width:850px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:15px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--line);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:55px;
+    margin-bottom:35px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:8px;
+    top:5px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 6px var(--gold-soft);
+}
+
+.timeline-card h3{
+    margin-bottom:5px;
+}
+
+.timeline-card p{
+    color:var(--muted);
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    text-align:center;
+    padding:65px 30px;
+    background:
+        linear-gradient(135deg,#fffdf8,#f4e7c9);
+}
+
+.contact-box h2{
+    font-size:2.7rem;
+    letter-spacing:-.05em;
+}
+
+.contact-box p{
+    max-width:600px;
+    margin:12px auto 25px;
+    color:var(--muted);
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:35px 0;
+    color:var(--muted);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* ================= DECORATION ================= */
+
+.decor{
+    position:fixed;
+    pointer-events:none;
+    border:1px solid rgba(184,137,40,.13);
+    border-radius:50%;
+    z-index:0;
+}
+
+.decor-one{
+    width:400px;
+    height:400px;
+    right:-200px;
+    top:180px;
+}
+
+.decor-two{
+    width:220px;
+    height:220px;
+    left:-110px;
+    bottom:200px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .project-card{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:3.7rem;
+    }
+
+    .code-card{
+        transform:none;
+    }
+
+    .floating{
+        display:none;
+    }
+
+    .project-content{
+        padding:30px;
+    }
+
+    .skills-grid,
+    .achievement-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+}
+
 </style>
 </head>
-<body><div class="decor one"></div><div class="decor two"></div>
-<nav class="nav"><div class="container navin"><a class="logo" href="#home">Samkit<span>.</span></a><div class="links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></div></div></nav>
-<main>
-<section class="hero" id="home"><div class="container hero-grid"><div><div class="eyebrow">Computer Engineering • ML • Data Science</div><div class="gold-line"></div><h1>Hi, I'm <span>Samkit Jain.</span></h1><p>Computer Engineering student and Machine Learning & Data Science enthusiast. I build data-driven solutions and enjoy understanding the mathematics behind intelligent systems.</p><div class="buttons"><a class="btn primary" href="#projects">View Project</a><a class="btn" href="#contact">Let's Connect</a></div></div><div class="terminal"><div class="dots"><i></i><i></i><i></i></div><div class="code"><div><span class="purple">const</span> developer = {</div><br><div>&nbsp;&nbsp;name: <span class="green">"Samkit Jain"</span>,</div><div>&nbsp;&nbsp;role: <span class="green">"ML & Data Science"</span>,</div><div>&nbsp;&nbsp;languages: [<span class="green">"Python"</span>, <span class="green">"C"</span>, <span class="green">"Java"</span>],</div><div>&nbsp;&nbsp;focus: [<span class="green">"ML"</span>, <span class="green">"DSA"</span>]</div><div>};</div><br><div><span class="cyan">print</span>(developer)</div></div></div></div></section>
-<section id="about"><div class="container"><h2 class="section-title">About Me</h2><p class="section-sub">A quick introduction.</p><div class="about"><div class="card"><p>I'm a Computer Engineering student at R. C. Patel Institute of Technology, Shirpur, Maharashtra. My interests include Python, machine learning, data science, statistical analysis and building practical software solutions.</p></div><div class="stats"><div class="card stat"><strong>7.6</strong><small>First-year CGPA</small></div><div class="card stat"><strong>91%</strong><small>CNN accuracy</small></div><div class="card stat"><strong>2029</strong><small>Expected graduation</small></div></div></div></div></section>
-<section id="projects"><div class="container"><h2 class="section-title">Featured Project</h2><p class="section-sub">My current highlight.</p><div class="card project"><div class="project-visual"><div class="visual-grid"></div><span style="position:relative;z-index:2">CNN()</span></div><div class="project-body"><h3>CNN from Scratch Using NumPy</h3><p>Unlocking the math behind deep learning by implementing the core pipeline without TensorFlow or PyTorch.</p><div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">CNN</span><span class="tag">Deep Learning</span></div><ul class="bullets"><li>Implemented convolution using sliding filter dot-products.</li><li>Built custom ReLU activation and Max Pooling layers.</li><li>Created fully connected layers with Softmax output.</li><li>Achieved <b>91% accuracy</b> from the Softmax classification pipeline.</li></ul></div></div></div></section>
-<section id="skills"><div class="container"><h2 class="section-title">Skills</h2><p class="section-sub">Technologies and strengths.</p><div class="skills"><div class="card skill"><h3>Technical</h3><p>Python, DSA, Machine Learning, Data Science, Statistical Analysis, Embedded Systems, Pandas, NumPy, Matplotlib</p></div><div class="card skill"><h3>Tools & Platforms</h3><p>Git, GitHub, VS Code, CodeChef, DeepMl, LeetCode</p></div><div class="card skill"><h3>Soft Skills</h3><p>Problem Solving, Communication, Adaptability, Teamwork, Continuous Learning</p></div></div></div></section>
-<section id="achievements"><div class="container"><h2 class="section-title">Achievements</h2><p class="section-sub">Updated as requested.</p><div class="achievements"><div class="card achievement"><strong>★ 2-Star CodeChef</strong><p>Achieved a 2-Star rating on CodeChef, with global rank 11220 and highest rating 1644.</p></div><div class="card achievement"><strong>500+ Problems</strong><p>Solved over 500 coding problems using Python, C, and Java across various platforms.</p></div><div class="card achievement"><strong>1 Project</strong><p>Built 1 Machine Learning / Deep Learning project focused on practical AI and software development skills.</p></div></div></div></section>
-<section id="education"><div class="container"><h2 class="section-title">Education</h2><p class="section-sub">Academic background.</p><div class="card"><h3>Bachelor of Technology — Computer Engineering</h3><p style="color:var(--muted);margin-top:7px">R. C. Patel Institute of Technology, Shirpur, Maharashtra</p><p style="color:var(--muted)">Expected Graduation: May 2029 • First-year CGPA: 7.6</p></div></div></section>
-<section id="contact"><div class="container"><h2 class="section-title">Let's Connect</h2><p class="section-sub">Have an idea, opportunity, or collaboration? Reach out.</p><div class="contact"><a href="mailto:samkit77jain@gmail.com">✉️ samkit77jain@gmail.com</a><a href="https://github.com/Samkit_github" target="_blank">⌘ GitHub — Samkit_github</a><a href="https://www.linkedin.com/in/samkitpjain?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">in LinkedIn — Samkit Jain</a></div></div></section>
-</main><footer><div class="container">© 2026 Samkit Jain. Built with HTML & CSS.</div></footer>
-</body></html>
+
+<body>
+
+<div class="decor decor-one"></div>
+<div class="decor decor-two"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#home" class="logo">
+Samkit<span>.</span>
+</a>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#achievements">Achievements</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+<span class="status-dot"></span>
+Available for learning & collaboration
+</div>
+
+<h1>
+Hi, I'm
+<span>Samkit Jain.</span>
+</h1>
+
+<p class="hero-description">
+Computer Engineering student passionate about
+Machine Learning, Data Science, Python and
+problem solving. I enjoy building intelligent
+systems and understanding the mathematics behind them.
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn btn-primary">
+View My Project →
+</a>
+
+<a href="#contact" class="btn">
+Let's Connect
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="code-card">
+
+<div class="code-header">
+
+<span>samkit.py</span>
+
+<div class="dots">
+<i></i>
+<i></i>
+<i></i>
+</div>
+
+</div>
+
+<div class="code">
+
+<span class="purple">class</span>
+<span class="gold">Developer</span>:
+
+<br>
+
+&nbsp;&nbsp;name =
+<span class="green">"Samkit Jain"</span>
+
+<br>
+
+&nbsp;&nbsp;field =
+<span class="green">"Computer Engineering"</span>
+
+<br>
+
+&nbsp;&nbsp;focus = [
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="green">"Machine Learning"</span>,
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="green">"Data Science"</span>,
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="green">"DSA"</span>
+
+<br>
+
+&nbsp;&nbsp;]
+
+<br>
+
+&nbsp;&nbsp;languages = [
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="blue">"Python"</span>,
+
+<span class="blue">"C"</span>,
+
+<span class="blue">"Java"</span>
+
+<br>
+
+&nbsp;&nbsp;]
+
+<br><br>
+
+<span class="gold">print</span>(
+<span class="green">"Keep Learning."</span>
+)
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="floating float-one">
+🐍 Python
+</div>
+
+<div class="floating float-two">
+🧠 Machine Learning
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+01 — About
+</div>
+
+<h2 class="section-title">
+A little about me.
+</h2>
+
+<p class="section-subtitle">
+Building skills today for the technology of tomorrow.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="card">
+
+<p class="about-text">
+
+I'm a Computer Engineering student at
+<strong>R. C. Patel Institute of Technology,
+Shirpur, Maharashtra.</strong>
+
+<br><br>
+
+My main interests are Machine Learning,
+Data Science, Python, Data Structures and
+Statistical Analysis.
+
+<br><br>
+
+I enjoy learning concepts from the fundamentals
+and turning them into practical projects.
+
+</p>
+
+<div class="about-highlight">
+
+<span class="pill">Python</span>
+<span class="pill">Machine Learning</span>
+<span class="pill">Data Science</span>
+<span class="pill">DSA</span>
+
+</div>
+
+</div>
+
+
+<div class="stats">
+
+<div class="card stat">
+<div class="stat-number">7.6</div>
+<div class="stat-label">First-Year CGPA</div>
+</div>
+
+<div class="card stat">
+<div class="stat-number">91%</div>
+<div class="stat-label">CNN Accuracy</div>
+</div>
+
+<div class="card stat">
+<div class="stat-number">500+</div>
+<div class="stat-label">Problems Solved</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECT ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+02 — Featured Project
+</div>
+
+<h2 class="section-title">
+Learning by building.
+</h2>
+
+<p class="section-subtitle">
+One of my key Machine Learning projects.
+</p>
+
+</div>
+
+
+<div class="card project-card">
+
+<div class="project-visual">
+
+<div class="neural">
+
+<div class="connection c1"></div>
+<div class="connection c2"></div>
+<div class="connection c3"></div>
+<div class="connection c4"></div>
+<div class="connection c5"></div>
+
+<div class="neuron n1"></div>
+<div class="neuron n2"></div>
+<div class="neuron n3"></div>
+<div class="neuron n4"></div>
+<div class="neuron n5"></div>
+<div class="neuron n6"></div>
+
+</div>
+
+</div>
+
+
+<div class="project-content">
+
+<div class="section-label">
+Machine Learning
+</div>
+
+<h3>
+CNN from Scratch Using NumPy
+</h3>
+
+<p>
+A Convolutional Neural Network implemented
+from the fundamentals using Python and NumPy,
+without TensorFlow or PyTorch.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">Python</span>
+<span class="tag">NumPy</span>
+<span class="tag">CNN</span>
+<span class="tag">Deep Learning</span>
+
+</div>
+
+
+<ul class="project-list">
+
+<li>
+Implemented convolution using sliding filter
+dot-products.
+</li>
+
+<li>
+Built custom ReLU activation and Max Pooling.
+</li>
+
+<li>
+Implemented fully connected layers.
+</li>
+
+<li>
+Created Softmax classification output.
+</li>
+
+<li>
+Achieved <strong>91% accuracy.</strong>
+</li>
+
+</ul>
+
+
+<a
+href="https://github.com/Samkit_github"
+target="_blank"
+class="btn btn-primary">
+View GitHub →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+03 — Skills
+</div>
+
+<h2 class="section-title">
+What I work with.
+</h2>
+
+<p class="section-subtitle">
+Technologies and areas I'm currently developing.
+</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="card skill-card">
+
+<h3>Programming</h3>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Python</span>
+<span>90%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>C</span>
+<span>75%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:75%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Java</span>
+<span>70%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:70%"></div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card skill-card">
+
+<h3>Data & AI</h3>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Machine Learning</span>
+<span>82%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:82%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Data Science</span>
+<span>80%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:80%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>NumPy / Pandas</span>
+<span>85%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card skill-card">
+
+<h3>Tools</h3>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Git & GitHub</span>
+<span>80%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:80%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>VS Code</span>
+<span>90%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Problem Solving</span>
+<span>85%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+04 — Achievements
+</div>
+
+<h2 class="section-title">
+Small milestones. Big progress.
+</h2>
+
+</div>
+
+
+<div class="achievement-grid">
+
+
+<div class="card achievement-card">
+
+<div class="achievement-icon">
+⭐
+</div>
+
+<div class="achievement-number">
+2-Star CodeChef
+</div>
+
+<p>
+Built competitive programming experience
+through consistent problem solving.
+</p>
+
+</div>
+
+
+<div class="card achievement-card">
+
+<div class="achievement-icon">
+💻
+</div>
+
+<div class="achievement-number">
+500+ Problems
+</div>
+
+<p>
+Problems solved using Python, C and Java
+across coding platforms.
+</p>
+
+</div>
+
+
+<div class="card achievement-card">
+
+<div class="achievement-icon">
+🧠
+</div>
+
+<div class="achievement-number">
+91% CNN Accuracy
+</div>
+
+<p>
+Successfully implemented a CNN from scratch
+using NumPy and Python.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+05 — Education
+</div>
+
+<h2 class="section-title">
+My academic journey.
+</h2>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="card timeline-card">
+
+<h3>
+B.Tech — Computer Engineering
+</h3>
+
+<p>
+<strong>
+R. C. Patel Institute of Technology
+</strong>
+</p>
+
+<p>
+Shirpur, Maharashtra
+</p>
+
+<p>
+Expected Graduation: May 2029
+</p>
+
+<p>
+First-Year CGPA: 7.6
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="card contact-box">
+
+<div class="section-label">
+06 — Contact
+</div>
+
+<h2>
+Let's build something together.
+</h2>
+
+<p>
+I'm always interested in learning,
+building projects and connecting with
+people interested in technology.
+</p>
+
+
+<div class="contact-links">
+
+<a
+href="mailto:samkit77jain@gmail.com"
+class="btn btn-primary">
+✉ Email Me
+</a>
+
+
+<a
+href="https://github.com/Samkit_github"
+target="_blank"
+class="btn">
+⌘ GitHub
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/samkitpjain?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+target="_blank"
+class="btn">
+in LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+© 2026 Samkit Jain
+</div>
+
+<div>
+Computer Engineering • ML • Data Science
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
